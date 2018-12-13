@@ -10,6 +10,10 @@ class Restaurant < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :friends_going,
+             :through => :confirmed_guest,
+             :source => :friends
+
   # Validations
 
   validates :image, :presence => true

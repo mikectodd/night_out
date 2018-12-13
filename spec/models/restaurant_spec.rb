@@ -12,6 +12,8 @@ RSpec.describe Restaurant, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:friends_going) }
+
     end
 
     describe "Validations" do
