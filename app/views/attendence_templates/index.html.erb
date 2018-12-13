@@ -62,19 +62,31 @@
 
         <!-- Display attendence.user_id start -->
         <td>
-          <%= attendence.user.username %>
+          <% if attendence.user.present? %>
+            <a href="/users/<%= attendence.user.id %>">
+              <%= attendence.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display attendence.user_id end -->
 
         <!-- Display attendence.restaurant_id start -->
         <td>
-          <%= attendence.restaurant.name %>
+          <% if attendence.restaurant.present? %>
+            <a href="/restaurants/<%= attendence.restaurant.id %>">
+              <%= attendence.restaurant.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display attendence.restaurant_id end -->
 
         <!-- Display attendence.bar_id start -->
         <td>
-          <%= attendence.bar.name %>
+          <% if attendence.bar.present? %>
+            <a href="/bars/<%= attendence.bar.id %>">
+              <%= attendence.bar.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display attendence.bar_id end -->
 

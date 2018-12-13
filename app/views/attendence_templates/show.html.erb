@@ -38,7 +38,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @attendence.user_id %>
+        <% if @attendence.user.present? %>
+          <a href="/users/<%= @attendence.user_id %>">
+            <%= @attendence.user.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display restaurant_id start -->
       <dd>
-        <%= @attendence.restaurant_id %>
+        <% if @attendence.restaurant.present? %>
+          <a href="/restaurants/<%= @attendence.restaurant_id %>">
+            <%= @attendence.restaurant.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display restaurant_id end -->
 
@@ -56,7 +64,11 @@
       </dt>
       <!-- Display bar_id start -->
       <dd>
-        <%= @attendence.bar_id %>
+        <% if @attendence.bar.present? %>
+          <a href="/bars/<%= @attendence.bar_id %>">
+            <%= @attendence.bar.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display bar_id end -->
 

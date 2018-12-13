@@ -72,19 +72,31 @@
 
         <!-- Display review.reviewer_id start -->
         <td>
-          <%= review.visitor.username %>
+          <% if review.visitor.present? %>
+            <a href="/users/<%= review.visitor.id %>">
+              <%= review.visitor.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display review.reviewer_id end -->
 
         <!-- Display review.restaurant_id start -->
         <td>
-          <%= review.restaurant.name %>
+          <% if review.restaurant.present? %>
+            <a href="/restaurants/<%= review.restaurant.id %>">
+              <%= review.restaurant.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display review.restaurant_id end -->
 
         <!-- Display review.bar_id start -->
         <td>
-          <%= review.bar.name %>
+          <% if review.bar.present? %>
+            <a href="/bars/<%= review.bar.id %>">
+              <%= review.bar.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display review.bar_id end -->
 
