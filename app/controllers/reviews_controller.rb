@@ -78,7 +78,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params.fetch("id_to_modify"))
 
     @review.body = params.fetch("body")
-    @review.reviewer_id = params.fetch("reviewer_id")
+    
     @review.restaurant_id = params.fetch("restaurant_id")
     @review.bar_id = params.fetch("bar_id")
 
