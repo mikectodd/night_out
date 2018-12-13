@@ -34,6 +34,40 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def create_row_from_restaurant
+    @review = Review.new
+
+    @review.body = params.fetch("body")
+    @review.reviewer_id = params.fetch("reviewer_id")
+    @review.restaurant_id = params.fetch("restaurant_id")
+    @review.bar_id = params.fetch("bar_id")
+
+    if @review.valid?
+      @review.save
+
+      redirect_to("/restaurants/#{@review.restaurant_id}", notice: "Review created successfully.")
+    else
+      render("review_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_bar
+    @review = Review.new
+
+    @review.body = params.fetch("body")
+    @review.reviewer_id = params.fetch("reviewer_id")
+    @review.restaurant_id = params.fetch("restaurant_id")
+    @review.bar_id = params.fetch("bar_id")
+
+    if @review.valid?
+      @review.save
+
+      redirect_to("/bars/#{@review.bar_id}", notice: "Review created successfully.")
+    else
+      render("review_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @review = Review.find(params.fetch("prefill_with_id"))
 

@@ -33,6 +33,38 @@ class AttendencesController < ApplicationController
     end
   end
 
+  def create_row_from_restaurant
+    @attendence = Attendence.new
+
+    @attendence.user_id = params.fetch("user_id")
+    @attendence.restaurant_id = params.fetch("restaurant_id")
+    @attendence.bar_id = params.fetch("bar_id")
+
+    if @attendence.valid?
+      @attendence.save
+
+      redirect_to("/restaurants/#{@attendence.restaurant_id}", notice: "Attendence created successfully.")
+    else
+      render("attendence_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_bar
+    @attendence = Attendence.new
+
+    @attendence.user_id = params.fetch("user_id")
+    @attendence.restaurant_id = params.fetch("restaurant_id")
+    @attendence.bar_id = params.fetch("bar_id")
+
+    if @attendence.valid?
+      @attendence.save
+
+      redirect_to("/bars/#{@attendence.bar_id}", notice: "Attendence created successfully.")
+    else
+      render("attendence_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @attendence = Attendence.find(params.fetch("prefill_with_id"))
 
