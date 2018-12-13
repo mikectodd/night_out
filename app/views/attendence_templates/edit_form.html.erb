@@ -1,0 +1,56 @@
+<h1>
+  Edit attendence #<%= @attendence.id %>
+</h1>
+
+<hr>
+
+<!-- Form attendence start -->
+<form action="/update_attendence/<%= @attendence.id %>" method="post">
+<!-- Form attendence end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @attendence.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for restaurant_id start -->
+  <div class="form-group">
+    <label for="restaurant_id">
+      Restaurant
+    </label>
+
+    <!-- Input for restaurant_id start -->
+    <input type="text" id="restaurant_id" name="restaurant_id" class="form-control" value="<%= @attendence.restaurant_id %>">
+    <!-- Input for restaurant_id end -->
+  </div>
+  <!-- Label and input for restaurant_id end -->
+
+  <!-- Label and input for bar_id start -->
+  <div class="form-group">
+    <label for="bar_id">
+      Bar
+    </label>
+
+    <!-- Input for bar_id start -->
+    <input type="text" id="bar_id" name="bar_id" class="form-control" value="<%= @attendence.bar_id %>">
+    <!-- Input for bar_id end -->
+  </div>
+  <!-- Label and input for bar_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update attendence
+  </button>
+</form>
+
+<hr>
+
+<a href="/attendences">
+  Go back
+</a>
