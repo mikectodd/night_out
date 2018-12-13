@@ -1,6 +1,10 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  belongs_to :restaurant,
+             :required => false,
+             :counter_cache => true
+
   belongs_to :visitor,
              :class_name => "User",
              :foreign_key => "reviewer_id"
