@@ -5,4 +5,6 @@ class Restaurant < ApplicationRecord
 
   # Validations
 
+  validates :image, :presence => true
+
 end
