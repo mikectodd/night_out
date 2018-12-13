@@ -41,7 +41,7 @@ class FriendRequestsController < ApplicationController
   def update_row
     @friend_request = FriendRequest.find(params.fetch("id_to_modify"))
 
-    @friend_request.sender_id = params.fetch("sender_id")
+    
     @friend_request.recipient_id = params.fetch("recipient_id")
 
     if @friend_request.valid?
