@@ -1,6 +1,10 @@
 class Attendence < ApplicationRecord
   # Direct associations
 
+  belongs_to :bar,
+             :required => false,
+             :counter_cache => :attendees_count
+
   belongs_to :restaurant,
              :required => false,
              :counter_cache => :attendees_count
