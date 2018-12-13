@@ -21,6 +21,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :bars_with_friends,
+             :through => :friends,
+             :source => :confirmed_bar
+
   # Validations
 
   validates :username, :uniqueness => true

@@ -16,6 +16,8 @@ RSpec.describe User, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:bars_with_friends) }
+
     end
 
     describe "Validations" do
