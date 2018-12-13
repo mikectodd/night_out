@@ -23,7 +23,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new
 
     @restaurant.name = params.fetch("name")
-    @restaurant.image = params.fetch("image")
+    @restaurant.image = params.fetch("image") if params.key?("image")
     @restaurant.location = params.fetch("location")
     @restaurant.food = params.fetch("food")
 
@@ -46,7 +46,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params.fetch("id_to_modify"))
 
     @restaurant.name = params.fetch("name")
-    @restaurant.image = params.fetch("image")
+    @restaurant.image = params.fetch("image") if params.key?("image")
     @restaurant.location = params.fetch("location")
     @restaurant.food = params.fetch("food")
 
