@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :attendances,
+             :class_name => "Attendence",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations

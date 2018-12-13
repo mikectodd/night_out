@@ -1,6 +1,9 @@
 class Attendence < ApplicationRecord
   # Direct associations
 
+  belongs_to :user,
+             :counter_cache => :attendances_count
+
   # Indirect associations
 
   # Validations
