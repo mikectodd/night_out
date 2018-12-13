@@ -1,0 +1,68 @@
+<h1>
+  Edit review #<%= @review.id %>
+</h1>
+
+<hr>
+
+<!-- Form review start -->
+<form action="/update_review/<%= @review.id %>" method="post">
+<!-- Form review end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <!-- Input for body start -->
+    <textarea id="body" name="body" class="form-control" rows="3"><%= @review.body %></textarea>
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <!-- Label and input for reviewer_id start -->
+  <div class="form-group">
+    <label for="reviewer_id">
+      Reviewer
+    </label>
+
+    <!-- Input for reviewer_id start -->
+    <input type="text" id="reviewer_id" name="reviewer_id" class="form-control" value="<%= @review.reviewer_id %>">
+    <!-- Input for reviewer_id end -->
+  </div>
+  <!-- Label and input for reviewer_id end -->
+
+  <!-- Label and input for restaurant_id start -->
+  <div class="form-group">
+    <label for="restaurant_id">
+      Restaurant
+    </label>
+
+    <!-- Input for restaurant_id start -->
+    <input type="text" id="restaurant_id" name="restaurant_id" class="form-control" value="<%= @review.restaurant_id %>">
+    <!-- Input for restaurant_id end -->
+  </div>
+  <!-- Label and input for restaurant_id end -->
+
+  <!-- Label and input for bar_id start -->
+  <div class="form-group">
+    <label for="bar_id">
+      Bar
+    </label>
+
+    <!-- Input for bar_id start -->
+    <input type="text" id="bar_id" name="bar_id" class="form-control" value="<%= @review.bar_id %>">
+    <!-- Input for bar_id end -->
+  </div>
+  <!-- Label and input for bar_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update review
+  </button>
+</form>
+
+<hr>
+
+<a href="/reviews">
+  Go back
+</a>
