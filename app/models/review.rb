@@ -1,6 +1,10 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  belongs_to :bar,
+             :required => false,
+             :counter_cache => true
+
   belongs_to :restaurant,
              :required => false,
              :counter_cache => true
