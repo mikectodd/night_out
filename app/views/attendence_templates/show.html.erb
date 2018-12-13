@@ -63,6 +63,17 @@
       </dd>
 
       <dt>
+        Friend
+      </dt>
+      <dd>
+        <% if @attendence.friend.present? %>
+          <a href="/friends/<%= @attendence.friend_id %>">
+            <%= @attendence.friend.created_at %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
         Created at
       </dt>
       <dd>

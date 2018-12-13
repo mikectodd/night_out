@@ -1,7 +1,7 @@
 class BarsController < ApplicationController
   def index
     @q = Bar.ransack(params[:q])
-    @bars = @q.result(:distinct => true).includes(:attendees, :reviews, :friends_going, :confirmed_guests).page(params[:page]).per(10)
+    @bars = @q.result(:distinct => true).includes(:attendees, :reviews, :friends_attending_bar, :confirmed_guests).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@bars.where.not(:location_latitude => nil)) do |bar, marker|
       marker.lat bar.location_latitude
       marker.lng bar.location_longitude

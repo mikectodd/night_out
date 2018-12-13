@@ -14,7 +14,7 @@ RSpec.describe Restaurant, type: :model do
 
     it { should have_many(:confirmed_guest) }
 
-    it { should have_many(:friends_going) }
+    it { should have_many(:friends_attending_restaurant) }
 
     end
 

@@ -41,6 +41,10 @@
         </th>
 
         <th>
+          Friend
+        </th>
+
+        <th>
           Created at
         </th>
 
@@ -78,6 +82,14 @@
           <% if attendence.bar.present? %>
             <a href="/bars/<%= attendence.bar.id %>">
               <%= attendence.bar.name %>
+            </a>
+          <% end %>
+        </td>
+
+        <td>
+          <% if attendence.friend.present? %>
+            <a href="/friends/<%= attendence.friend.id %>">
+              <%= attendence.friend.created_at %>
             </a>
           <% end %>
         </td>

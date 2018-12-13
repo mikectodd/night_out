@@ -45,24 +45,23 @@ Rails.application.routes.draw do
 
   #------------------------------
 
-  # Routes for the Friend request resource:
+  # Routes for the Friend resource:
 
   # CREATE
-  get("/friend_requests/new", { :controller => "friend_requests", :action => "new_form" })
-  post("/create_friend_request", { :controller => "friend_requests", :action => "create_row" })
+  get("/friends/new", { :controller => "friends", :action => "new_form" })
+  post("/create_friend", { :controller => "friends", :action => "create_row" })
 
   # READ
-  get("/friend_requests", { :controller => "friend_requests", :action => "index" })
-  get("/friend_requests/:id_to_display", { :controller => "friend_requests", :action => "show" })
+  get("/friends", { :controller => "friends", :action => "index" })
+  get("/friends/:id_to_display", { :controller => "friends", :action => "show" })
 
   # UPDATE
-  get("/friend_requests/:prefill_with_id/edit", { :controller => "friend_requests", :action => "edit_form" })
-  post("/update_friend_request/:id_to_modify", { :controller => "friend_requests", :action => "update_row" })
+  get("/friends/:prefill_with_id/edit", { :controller => "friends", :action => "edit_form" })
+  post("/update_friend/:id_to_modify", { :controller => "friends", :action => "update_row" })
 
   # DELETE
-  get("/delete_friend_request/:id_to_remove", { :controller => "friend_requests", :action => "destroy_row" })
-  get("/delete_friend_request_from_recipient/:id_to_remove", { :controller => "friend_requests", :action => "destroy_row_from_recipient" })
-  get("/delete_friend_request_from_sender/:id_to_remove", { :controller => "friend_requests", :action => "destroy_row_from_sender" })
+  get("/delete_friend/:id_to_remove", { :controller => "friends", :action => "destroy_row" })
+  get("/delete_friend_from_user/:id_to_remove", { :controller => "friends", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -72,6 +71,7 @@ Rails.application.routes.draw do
   get("/attendences/new", { :controller => "attendences", :action => "new_form" })
   post("/create_attendence", { :controller => "attendences", :action => "create_row" })
   post("/create_attendence_from_bar", { :controller => "attendences", :action => "create_row_from_bar" })
+  post("/create_attendence_from_friend", { :controller => "attendences", :action => "create_row_from_friend" })
   post("/create_attendence_from_restaurant", { :controller => "attendences", :action => "create_row_from_restaurant" })
 
   # READ
@@ -85,6 +85,7 @@ Rails.application.routes.draw do
   # DELETE
   get("/delete_attendence/:id_to_remove", { :controller => "attendences", :action => "destroy_row" })
   get("/delete_attendence_from_bar/:id_to_remove", { :controller => "attendences", :action => "destroy_row_from_bar" })
+  get("/delete_attendence_from_friend/:id_to_remove", { :controller => "attendences", :action => "destroy_row_from_friend" })
   get("/delete_attendence_from_restaurant/:id_to_remove", { :controller => "attendences", :action => "destroy_row_from_restaurant" })
   get("/delete_attendence_from_user/:id_to_remove", { :controller => "attendences", :action => "destroy_row_from_user" })
 

@@ -1,0 +1,19 @@
+<h1>
+  Edit friend #<%= @friend.id %>
+</h1>
+
+<hr>
+
+<form action="/update_friend/<%= @friend.id %>" method="post">
+
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update friend
+  </button>
+</form>
+
+<hr>
+
+<a href="/friends">
+  Go back
+</a>

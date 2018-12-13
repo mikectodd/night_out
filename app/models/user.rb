@@ -1,14 +1,8 @@
 class User < ApplicationRecord
   # Direct associations
 
-  has_many   :received_friend_requests,
-             :class_name => "FriendRequest",
-             :foreign_key => "recipient_id",
-             :dependent => :destroy
-
-  has_many   :sent_friend_requests,
-             :class_name => "FriendRequest",
-             :foreign_key => "sender_id",
+  has_many   :friends,
+             :foreign_key => "friend_id",
              :dependent => :destroy
 
   has_many   :reviews,
@@ -21,14 +15,6 @@ class User < ApplicationRecord
 
   # Indirect associations
 
-  has_many   :friends,
-             :through => :received_friend_requests,
-             :source => :sender
-
-  has_many   :friends,
-             :through => :sent_friend_requests,
-             :source => :recipient
-
   has_many   :confirmed_restaurant,
              :through => :attendances,
              :source => :restaurant
@@ -36,14 +22,6 @@ class User < ApplicationRecord
   has_many   :confirmed_bar,
              :through => :attendances,
              :source => :bar
-
-  has_many   :restaurant_with_friends,
-             :through => :friends,
-             :source => :confirmed_restaurant
-
-  has_many   :bars_with_friends,
-             :through => :friends,
-             :source => :confirmed_bar
 
   # Validations
 

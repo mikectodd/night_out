@@ -11,7 +11,7 @@ class AttendencesController < ApplicationController
 
   def index
     @q = current_user.attendances.ransack(params[:q])
-    @attendences = @q.result(:distinct => true).includes(:user, :restaurant, :bar).page(params[:page]).per(10)
+    @attendences = @q.result(:distinct => true).includes(:user, :restaurant, :friend, :bar).page(params[:page]).per(10)
 
     render("attendence_templates/index.html.erb")
   end
@@ -34,6 +34,7 @@ class AttendencesController < ApplicationController
     @attendence.user_id = params.fetch("user_id")
     @attendence.restaurant_id = params.fetch("restaurant_id")
     @attendence.bar_id = params.fetch("bar_id")
+    @attendence.friend_id = params.fetch("friend_id")
 
     if @attendence.valid?
       @attendence.save
@@ -50,11 +51,29 @@ class AttendencesController < ApplicationController
     @attendence.user_id = params.fetch("user_id")
     @attendence.restaurant_id = params.fetch("restaurant_id")
     @attendence.bar_id = params.fetch("bar_id")
+    @attendence.friend_id = params.fetch("friend_id")
 
     if @attendence.valid?
       @attendence.save
 
       redirect_to("/restaurants/#{@attendence.restaurant_id}", notice: "Attendence created successfully.")
+    else
+      render("attendence_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_friend
+    @attendence = Attendence.new
+
+    @attendence.user_id = params.fetch("user_id")
+    @attendence.restaurant_id = params.fetch("restaurant_id")
+    @attendence.bar_id = params.fetch("bar_id")
+    @attendence.friend_id = params.fetch("friend_id")
+
+    if @attendence.valid?
+      @attendence.save
+
+      redirect_to("/friends/#{@attendence.friend_id}", notice: "Attendence created successfully.")
     else
       render("attendence_templates/new_form_with_errors.html.erb")
     end
@@ -66,6 +85,7 @@ class AttendencesController < ApplicationController
     @attendence.user_id = params.fetch("user_id")
     @attendence.restaurant_id = params.fetch("restaurant_id")
     @attendence.bar_id = params.fetch("bar_id")
+    @attendence.friend_id = params.fetch("friend_id")
 
     if @attendence.valid?
       @attendence.save
@@ -88,6 +108,7 @@ class AttendencesController < ApplicationController
     
     @attendence.restaurant_id = params.fetch("restaurant_id")
     @attendence.bar_id = params.fetch("bar_id")
+    @attendence.friend_id = params.fetch("friend_id")
 
     if @attendence.valid?
       @attendence.save
@@ -112,6 +133,14 @@ class AttendencesController < ApplicationController
     @attendence.destroy
 
     redirect_to("/restaurants/#{@attendence.restaurant_id}", notice: "Attendence deleted successfully.")
+  end
+
+  def destroy_row_from_friend
+    @attendence = Attendence.find(params.fetch("id_to_remove"))
+
+    @attendence.destroy
+
+    redirect_to("/friends/#{@attendence.friend_id}", notice: "Attendence deleted successfully.")
   end
 
   def destroy_row_from_bar

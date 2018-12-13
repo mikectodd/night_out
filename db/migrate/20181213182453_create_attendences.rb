@@ -4,6 +4,7 @@ class CreateAttendences < ActiveRecord::Migration[5.1]
       t.integer :user_id
       t.integer :restaurant_id
       t.integer :bar_id
+      t.integer :friend_id
 
       t.timestamps
     end

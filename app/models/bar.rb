@@ -34,7 +34,7 @@ class Bar < ApplicationRecord
              :through => :attendees,
              :source => :user
 
-  has_many   :friends_going,
+  has_many   :friends_attending_bar,
              :through => :confirmed_guests,
              :source => :friends
 
