@@ -10,6 +10,10 @@ class Bar < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :confirmed_guests,
+             :through => :attendees,
+             :source => :user
+
   has_many   :friends_going,
              :through => :confirmed_guests,
              :source => :friends
