@@ -13,17 +13,21 @@
 
       <!-- Edit link attendence start -->
       <div class="col">
-        <a href="/attendences/<%= @attendence.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit attendence
-        </a>
+        <% if current_user == @attendence.user %>
+          <a href="/attendences/<%= @attendence.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit attendence
+          </a>
+        <% end %>
       </div>
       <!-- Edit link attendence end -->
 
       <!-- Delete link attendence start -->
       <div class="col">
-        <a href="/delete_attendence/<%= @attendence.id %>" class="btn btn-block btn-outline-secondary">
-          Delete attendence
-        </a>
+        <% if current_user == @attendence.user %>
+          <a href="/delete_attendence/<%= @attendence.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete attendence
+          </a>
+        <% end %>
       </div>
       <!-- Delete link attendence end -->
     </div>

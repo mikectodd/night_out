@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_attendence_from_bar/<%= attendence.id %>">
-          Delete
-        </a>
+        <%if current_user == attendence.user %>
+          <a href="/delete_attendence_from_bar/<%= attendence.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
