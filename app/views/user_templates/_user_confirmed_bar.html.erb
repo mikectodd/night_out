@@ -6,11 +6,9 @@
   <ul class="list-group list-group-flush">
     <% @user.confirmed_bar.each do |bar| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/bars/<%= bar.id %>">
           <%= bar.name %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

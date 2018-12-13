@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @bar.errors.any? %>
   <% @bar.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,45 +12,31 @@
 
 <hr>
 
-<!-- Form bar start -->
 <form action="/update_bar/<%= @bar.id %>" method="post">
-<!-- Form bar end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @bar.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for location start -->
   <div class="form-group">
     <label for="location">
       Location
     </label>
 
-    <!-- Input for location start -->
     <input type="text" id="location" name="location" class="form-control" value="<%= @bar.location %>">
-    <!-- Input for location end -->
   </div>
-  <!-- Label and input for location end -->
 
-  <!-- Label and input for drink_deal start -->
   <div class="form-group">
     <label for="drink_deal">
       Drink deal
     </label>
 
-    <!-- Input for drink_deal start -->
     <input type="text" id="drink_deal" name="drink_deal" class="form-control" value="<%= @bar.drink_deal %>">
-    <!-- Input for drink_deal end -->
   </div>
-  <!-- Label and input for drink_deal end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update bar

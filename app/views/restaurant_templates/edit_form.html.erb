@@ -4,58 +4,40 @@
 
 <hr>
 
-<!-- Form restaurant start -->
 <form action="/update_restaurant/<%= @restaurant.id %>" method="post" enctype="multipart/form-data">
-<!-- Form restaurant end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @restaurant.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for image start -->
   <div class="form-group">
     <label for="image">
       Image
     </label>
 
-    <!-- Input for image start -->
     <%= cl_image_tag(@restaurant.image.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="image" name="image" class="form-control">
-    <!-- Input for image end -->
   </div>
-  <!-- Label and input for image end -->
 
-  <!-- Label and input for location start -->
   <div class="form-group">
     <label for="location">
       Location
     </label>
 
-    <!-- Input for location start -->
     <input type="text" id="location" name="location" class="form-control" value="<%= @restaurant.location %>">
-    <!-- Input for location end -->
   </div>
-  <!-- Label and input for location end -->
 
-  <!-- Label and input for food start -->
   <div class="form-group">
     <label for="food">
       Food
     </label>
 
-    <!-- Input for food start -->
     <textarea id="food" name="food" class="form-control" rows="3"><%= @restaurant.food %></textarea>
-    <!-- Input for food end -->
   </div>
-  <!-- Label and input for food end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update restaurant

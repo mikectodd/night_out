@@ -1,29 +1,16 @@
-<!-- Form attendence start -->
 <form action="/create_attendence_from_restaurant" method="post">
-<!-- Form attendence end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for restaurant_id start -->
-  <!-- Input for restaurant_id start -->
   <input type="hidden" name="restaurant_id" value="<%= @restaurant.id %>">
-  <!-- Input for restaurant_id end -->
 
-  <!-- Label and input for bar_id start -->
   <div class="form-group">
     <label for="bar_id">
       Bar
     </label>
 
-    <!-- Input for bar_id start -->
     <%= select_tag(:bar_id, options_from_collection_for_select(Bar.all, :id, :name, @attendence.bar_id), :class => "form-control") %>
-    <!-- Input for bar_id end -->
   </div>
-  <!-- Label and input for bar_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create attendence

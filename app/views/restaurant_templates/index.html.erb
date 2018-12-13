@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "restaurant_templates/restaurants_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "restaurant_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -66,47 +62,33 @@
 
       <% @restaurants.each do |restaurant| %>
       <tr>
-        <!-- Display restaurant.id start -->
         <td>
           <%= restaurant.id %>
         </td>
-        <!-- Display restaurant.id end -->
 
-        <!-- Display restaurant.name start -->
         <td>
           <%= restaurant.name %>
         </td>
-        <!-- Display restaurant.name end -->
 
-        <!-- Display restaurant.image start -->
         <td>
           <img src='<%= restaurant.image %>' class='img-fluid'>
         </td>
-        <!-- Display restaurant.image end -->
 
-        <!-- Display restaurant.location start -->
         <td>
           <%= restaurant.location %>
         </td>
-        <!-- Display restaurant.location end -->
 
-        <!-- Display restaurant.food start -->
         <td>
           <%= restaurant.food %>
         </td>
-        <!-- Display restaurant.food end -->
 
-        <!-- Display restaurant.created_at start -->
         <td>
           <%= time_ago_in_words(restaurant.created_at) %> ago
         </td>
-        <!-- Display restaurant.created_at end -->
 
-        <!-- Display restaurant.updated_at start -->
         <td>
           <%= time_ago_in_words(restaurant.updated_at) %> ago
         </td>
-        <!-- Display restaurant.updated_at end -->
 
         <td>
           <a href="/restaurants/<%= restaurant.id %>">

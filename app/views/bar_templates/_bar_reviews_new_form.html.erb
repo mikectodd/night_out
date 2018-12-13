@@ -1,41 +1,24 @@
-<!-- Form review start -->
 <form action="/create_review_from_bar" method="post">
-<!-- Form review end -->
 
-  <!-- Label and input for body start -->
   <div class="form-group">
     <label for="body">
       Body
     </label>
 
-    <!-- Input for body start -->
     <textarea id="body" name="body" class="form-control" rows="3"><%= @review.body %></textarea>
-    <!-- Input for body end -->
   </div>
-  <!-- Label and input for body end -->
 
-  <!-- Label and input for reviewer_id start -->
-  <!-- Input for "reviewer_id" start -->
   <input type="hidden" name="reviewer_id" value="<%= current_user.id %>">
-  <!-- Input for "reviewer_id" end -->
-  <!-- Label and input for reviewer_id end -->
 
-  <!-- Label and input for restaurant_id start -->
   <div class="form-group">
     <label for="restaurant_id">
       Restaurant
     </label>
 
-    <!-- Input for restaurant_id start -->
     <%= select_tag(:restaurant_id, options_from_collection_for_select(Restaurant.all, :id, :name, @review.restaurant_id), :class => "form-control") %>
-    <!-- Input for restaurant_id end -->
   </div>
-  <!-- Label and input for restaurant_id end -->
 
-  <!-- Label and input for bar_id start -->
-  <!-- Input for bar_id start -->
   <input type="hidden" name="bar_id" value="<%= @bar.id %>">
-  <!-- Input for bar_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create review

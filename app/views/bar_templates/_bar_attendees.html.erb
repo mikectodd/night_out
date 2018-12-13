@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @bar.attendees.each do |attendence| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/attendences/<%= attendence.id %>">
           <%= attendence.created_at %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == attendence.user %>
           <a href="/delete_attendence_from_bar/<%= attendence.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="bar_attendees_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "bar_templates/bar_attendees_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 
