@@ -1,6 +1,11 @@
 class BarsController < ApplicationController
   def index
     @bars = Bar.all
+    @location_hash = Gmaps4rails.build_markers(@bars.where.not(:location_latitude => nil)) do |bar, marker|
+      marker.lat bar.location_latitude
+      marker.lng bar.location_longitude
+      marker.infowindow "<h5><a href='/bars/#{bar.id}'>#{bar.name}</a></h5><small>#{bar.location_formatted_address}</small>"
+    end
 
     render("bar_templates/index.html.erb")
   end

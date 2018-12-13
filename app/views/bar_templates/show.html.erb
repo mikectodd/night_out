@@ -43,7 +43,9 @@
       </dt>
       <!-- Display location start -->
       <dd>
-        <%= @bar.location %>
+        <div>
+          <%= render partial: "bar_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display location end -->
 
