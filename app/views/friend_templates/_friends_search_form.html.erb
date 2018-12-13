@@ -1,4 +1,4 @@
-<%= search_form_for @q, :class => collapse_search_form, :id => "attendences_filters" do |f| %>
+<%= search_form_for @q, :class => collapse_search_form, :id => "friends_filters" do |f| %>
   <p class="lead">Narrow results:</p>
 
   <div class="form-group">
@@ -48,26 +48,21 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :restaurant_name_cont, "Restaurant name contains" %>
-    <%= f.text_field :restaurant_name_cont, :class => "form-control", :placeholder => "Restaurant name contains" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :created_at, "Friend Created at" %>
+    <%= f.label :created_at, "Attendence Created at" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='friendgteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :friend_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Friend Created at greater than or equal to", :data => {:target => '#friendgteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#friendgteqcreated_atPicker' data-toggle="datetimepicker">
+        <div class='input-group date' id='attendencesgteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :attendences_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Attendence Created at greater than or equal to", :data => {:target => '#attendencesgteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#attendencesgteqcreated_atPicker' data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
           </div>
         </div>
       </div>
 
       <div class='col-md-6'>
-        <div class='input-group date' id='friendlteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :friend_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Friend Created at less than or equal to", :data => {:target => '#friendlteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#friendlteqcreated_atPicker' data-toggle="datetimepicker">
+        <div class='input-group date' id='attendenceslteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :attendences_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Attendence Created at less than or equal to", :data => {:target => '#attendenceslteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#attendenceslteqcreated_atPicker' data-toggle="datetimepicker">
             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
           </div>
         </div>
@@ -76,34 +71,39 @@
   </div>
   <script type="text/javascript">
       $(function () {
-          $('#friendgteqcreated_atPicker').datetimepicker({
+          $('#attendencesgteqcreated_atPicker').datetimepicker({
               format: 'YYYY-MM-DD hh:mm:SS'
           });
-          $('#friendlteqcreated_atPicker').datetimepicker({
+          $('#attendenceslteqcreated_atPicker').datetimepicker({
               useCurrent: false,
               format: 'YYYY-MM-DD hh:mm:SS'
           });
-          $('#friendgteqcreated_atPicker').on("dp.change", function (e) {
-              $('#friendlteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
+          $('#attendencesgteqcreated_atPicker').on("dp.change", function (e) {
+              $('#attendenceslteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
           });
-          $('#friendlteqcreated_atPicker').on("dp.change", function (e) {
-              $('#friendgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
+          $('#attendenceslteqcreated_atPicker').on("dp.change", function (e) {
+              $('#attendencesgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
           });
       });
   </script>
 
   <div class="form-group">
-    <%= f.label :bar_name_cont, "Bar name contains" %>
-    <%= f.text_field :bar_name_cont, :class => "form-control", :placeholder => "Bar name contains" %>
+    <%= f.label :bar_attended_by_friend_name_cont, "Bar name contains" %>
+    <%= f.text_field :bar_attended_by_friend_name_cont, :class => "form-control", :placeholder => "Bar name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :restaurant_attended_by_friend_name_cont, "Restaurant name contains" %>
+    <%= f.text_field :restaurant_attended_by_friend_name_cont, :class => "form-control", :placeholder => "Restaurant name contains" %>
   </div>
 
 
   <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
 
-  <a href="/attendences" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+  <a href="/friends" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
 
 <% end %>
 
-<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#attendences_filters">
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#friends_filters">
   Show filters
 </a>

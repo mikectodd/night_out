@@ -14,7 +14,7 @@ RSpec.describe Bar, type: :model do
 
     it { should have_many(:confirmed_guests) }
 
-    it { should have_many(:friends_going) }
+    it { should have_many(:friends_attending_bar) }
 
     end
 

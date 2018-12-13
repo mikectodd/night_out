@@ -36,7 +36,7 @@ class Restaurant < ApplicationRecord
              :through => :attendees,
              :source => :user
 
-  has_many   :friends_going,
+  has_many   :friends_attending_restaurant,
              :through => :confirmed_guest,
              :source => :friends
 

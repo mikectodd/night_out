@@ -31,6 +31,14 @@
     <%= select_tag(:bar_id, options_from_collection_for_select(Bar.all, :id, :name, @attendence.bar_id), :class => "form-control") %>
   </div>
 
+  <div class="form-group">
+    <label for="friend_id">
+      Friend
+    </label>
+
+    <%= select_tag(:friend_id, options_from_collection_for_select(Friend.all, :id, :created_at, @attendence.friend_id), :class => "form-control") %>
+  </div>
+
   <button class="btn btn-block btn-outline-secondary">
     Update attendence
   </button>

@@ -1,0 +1,21 @@
+<h1>
+  Add a new friend
+</h1>
+
+
+<hr>
+
+<form action="/create_friend" method="post">
+
+  <input type="hidden" name="friend_id" value="<%= current_user.id %>">
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create friend
+  </button>
+</form>
+
+<hr>
+
+<a href="/friends">
+  Go back
+</a>

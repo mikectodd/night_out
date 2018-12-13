@@ -6,6 +6,8 @@ RSpec.describe Attendence, type: :model do
 
     it { should belong_to(:bar) }
 
+    it { should belong_to(:friend) }
+
     it { should belong_to(:restaurant) }
 
     it { should belong_to(:user) }

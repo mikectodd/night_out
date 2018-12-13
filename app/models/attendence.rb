@@ -5,6 +5,9 @@ class Attendence < ApplicationRecord
              :required => false,
              :counter_cache => :attendees_count
 
+  belongs_to :friend,
+             :required => false
+
   belongs_to :restaurant,
              :required => false,
              :counter_cache => :attendees_count
