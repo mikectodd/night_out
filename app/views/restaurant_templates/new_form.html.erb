@@ -1,0 +1,69 @@
+<h1>
+  Add a new restaurant
+</h1>
+
+
+<hr>
+
+<!-- Form restaurant start -->
+<form action="/create_restaurant" method="post">
+<!-- Form restaurant end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for image start -->
+  <div class="form-group">
+    <label for="image">
+      Image
+    </label>
+
+    <!-- Input for image start -->
+    <input type="text" id="image" name="image" class="form-control">
+    <!-- Input for image end -->
+  </div>
+  <!-- Label and input for image end -->
+
+  <!-- Label and input for location start -->
+  <div class="form-group">
+    <label for="location">
+      Location
+    </label>
+
+    <!-- Input for location start -->
+    <input type="text" id="location" name="location" class="form-control">
+    <!-- Input for location end -->
+  </div>
+  <!-- Label and input for location end -->
+
+  <!-- Label and input for food start -->
+  <div class="form-group">
+    <label for="food">
+      Food
+    </label>
+
+    <!-- Input for food start -->
+    <textarea id="food" name="food" class="form-control" rows="3"></textarea>
+    <!-- Input for food end -->
+  </div>
+  <!-- Label and input for food end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create restaurant
+  </button>
+</form>
+
+<hr>
+
+<a href="/restaurants">
+  Go back
+</a>
