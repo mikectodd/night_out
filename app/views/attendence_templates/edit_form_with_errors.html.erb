@@ -48,7 +48,7 @@
     </label>
 
     <!-- Input for bar_id start -->
-    <input type="text" id="bar_id" name="bar_id" class="form-control" value="<%= @attendence.bar_id %>">
+    <%= select_tag(:bar_id, options_from_collection_for_select(Bar.all, :id, :name, @attendence.bar_id), :class => "form-control") %>
     <!-- Input for bar_id end -->
   </div>
   <!-- Label and input for bar_id end -->
