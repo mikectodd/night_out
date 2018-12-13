@@ -5,6 +5,8 @@ class Review < ApplicationRecord
 
   # Validations
 
+  validates :restaurant_id, :presence => true
+
   validates :reviewer_id, :presence => true
 
 end
