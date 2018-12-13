@@ -5,6 +5,8 @@ class Attendence < ApplicationRecord
 
   # Validations
 
+  validates :bar_id, :uniqueness => { :scope => [:user_id], :message => "already attending" }
+
   validates :restaurant_id, :uniqueness => { :scope => [:user_id], :message => "already attending" }
 
   validates :restaurant_id, :presence => true
