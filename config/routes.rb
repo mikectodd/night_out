@@ -37,6 +37,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_review/:id_to_remove", { :controller => "reviews", :action => "destroy_row" })
+  get("/delete_review_from_bar/:id_to_remove", { :controller => "reviews", :action => "destroy_row_from_bar" })
+  get("/delete_review_from_restaurant/:id_to_remove", { :controller => "reviews", :action => "destroy_row_from_restaurant" })
+  get("/delete_review_from_visitor/:id_to_remove", { :controller => "reviews", :action => "destroy_row_from_visitor" })
 
   #------------------------------
 
@@ -56,6 +59,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_friend_request/:id_to_remove", { :controller => "friend_requests", :action => "destroy_row" })
+  get("/delete_friend_request_from_recipient/:id_to_remove", { :controller => "friend_requests", :action => "destroy_row_from_recipient" })
+  get("/delete_friend_request_from_sender/:id_to_remove", { :controller => "friend_requests", :action => "destroy_row_from_sender" })
 
   #------------------------------
 
@@ -75,6 +80,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_attendence/:id_to_remove", { :controller => "attendences", :action => "destroy_row" })
+  get("/delete_attendence_from_bar/:id_to_remove", { :controller => "attendences", :action => "destroy_row_from_bar" })
+  get("/delete_attendence_from_restaurant/:id_to_remove", { :controller => "attendences", :action => "destroy_row_from_restaurant" })
+  get("/delete_attendence_from_user/:id_to_remove", { :controller => "attendences", :action => "destroy_row_from_user" })
 
   #------------------------------
 

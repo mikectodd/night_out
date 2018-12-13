@@ -55,6 +55,30 @@ class AttendencesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @attendence = Attendence.find(params.fetch("id_to_remove"))
+
+    @attendence.destroy
+
+    redirect_to("/users/#{@attendence.user_id}", notice: "Attendence deleted successfully.")
+  end
+
+  def destroy_row_from_restaurant
+    @attendence = Attendence.find(params.fetch("id_to_remove"))
+
+    @attendence.destroy
+
+    redirect_to("/restaurants/#{@attendence.restaurant_id}", notice: "Attendence deleted successfully.")
+  end
+
+  def destroy_row_from_bar
+    @attendence = Attendence.find(params.fetch("id_to_remove"))
+
+    @attendence.destroy
+
+    redirect_to("/bars/#{@attendence.bar_id}", notice: "Attendence deleted successfully.")
+  end
+
   def destroy_row
     @attendence = Attendence.find(params.fetch("id_to_remove"))
 
