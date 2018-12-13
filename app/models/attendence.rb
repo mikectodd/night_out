@@ -5,4 +5,6 @@ class Attendence < ApplicationRecord
 
   # Validations
 
+  validates :user_id, :presence => true
+
 end
