@@ -16,6 +16,8 @@ RSpec.describe User, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:friends) }
+
     it { should have_many(:confirmed_restaurant) }
 
     it { should have_many(:confirmed_bar) }
