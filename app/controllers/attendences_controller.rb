@@ -74,7 +74,7 @@ class AttendencesController < ApplicationController
   def update_row
     @attendence = Attendence.find(params.fetch("id_to_modify"))
 
-    @attendence.user_id = params.fetch("user_id")
+    
     @attendence.restaurant_id = params.fetch("restaurant_id")
     @attendence.bar_id = params.fetch("bar_id")
 
