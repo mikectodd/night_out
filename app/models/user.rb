@@ -21,6 +21,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :confirmed_restaurant,
+             :through => :attendances,
+             :source => :restaurant
+
   has_many   :confirmed_bar,
              :through => :attendances,
              :source => :bar

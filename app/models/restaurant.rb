@@ -10,6 +10,10 @@ class Restaurant < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :confirmed_guest,
+             :through => :attendees,
+             :source => :user
+
   has_many   :friends_going,
              :through => :confirmed_guest,
              :source => :friends
